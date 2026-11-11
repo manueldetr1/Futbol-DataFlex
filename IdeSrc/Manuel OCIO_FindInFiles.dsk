@@ -1,0 +1,14 @@
+[Header]
+Mask=*.src;*.vw;*.sl;*.dg;*.rv;*.bp;*.pkg;*.wo;*.dd;*.inc;*.tpl;*.dfo;*.asp;*.asa;*.html;*.css;*.js
+Active=0
+SubDirectories=1
+WholeWordOnly=0
+RegularExpression=0
+SearchWhere=0
+Location=C:\Users\Manuel OCIO\iCloudDrive\Desktop\DataControl\DATAFLEX\Sprints_DATAFLEX\IdeSrc\Manuel OCIO_FindInFiles.dsk
+[C:\Users\Manuel OCIO\iCloudDrive\Desktop\DataControl\DATAFLEX\Sprints_DATAFLEX\AppSrc]
+IsEnabled=1
+[C:\Users\Manuel OCIO\iCloudDrive\Desktop\DataControl\DATAFLEX\Sprints_DATAFLEX\DDSrc]
+IsEnabled=1
+[C:\Users\Manuel OCIO\iCloudDrive\Desktop\DataControl\DATAFLEX\Sprints_DATAFLEX\AppHtml]
+IsEnabled=1
