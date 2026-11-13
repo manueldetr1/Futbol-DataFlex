@@ -1,13 +1,13 @@
 [Workspace]
 CurrentProject=WebApp.src
-Location=C:\DataControl\DATAFLEX\Sprints_DATAFLEX\IdeSrc\Manuel OCIO_Studio.dsk
+Location=C:\Users\Manuel OCIO\Desktop\DataControl\DATAFLEX\Sprints_DATAFLEX\IdeSrc\Manuel OCIO_Studio.dsk
 CreateNew=3
 [TabWindows]
 GroupCount=1
 HorizontalGroups=1
 [TabGroup0]
 GroupSize=40
-SelectedTab=4
+SelectedTab=1
 [Window0]
 Filename=Workspace Dashboard
 ViewType=101
@@ -18,7 +18,7 @@ Right=1957
 TabIndex=0
 TabGroup=0
 [Window1]
-Filename=C:\DataControl\DATAFLEX\Sprints_DATAFLEX\AppSrc\ZoomJugador.wo
+Filename=C:\Users\Manuel OCIO\Desktop\DataControl\DATAFLEX\Sprints_DATAFLEX\AppSrc\ZoomEntrenador.wo
 ViewType=1
 Top=26
 Left=0
@@ -27,37 +27,4 @@ Right=1957
 CursorLine=0
 CursorColumn=0
 TabIndex=1
-TabGroup=0
-[Window2]
-Filename=C:\DataControl\DATAFLEX\Sprints_DATAFLEX\AppSrc\SelectJugador.wo
-ViewType=1
-Top=26
-Left=0
-Bottom=963
-Right=1957
-CursorLine=0
-CursorColumn=1
-TabIndex=2
-TabGroup=0
-[Window3]
-Filename=C:\DataControl\DATAFLEX\Sprints_DATAFLEX\AppSrc\ZoomPosicion.wo
-ViewType=1
-Top=26
-Left=0
-Bottom=963
-Right=1957
-CursorLine=0
-CursorColumn=0
-TabIndex=3
-TabGroup=0
-[Window4]
-Filename=C:\DataControl\DATAFLEX\Sprints_DATAFLEX\AppSrc\SelectPosicion.wo
-ViewType=1
-Top=26
-Left=0
-Bottom=963
-Right=1957
-CursorLine=0
-CursorColumn=0
-TabIndex=4
 TabGroup=0

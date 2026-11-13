@@ -5,10 +5,10 @@ SubDirectories=1
 WholeWordOnly=0
 RegularExpression=0
 SearchWhere=0
-Location=C:\DataControl\DATAFLEX\Sprints_DATAFLEX\IdeSrc\Manuel OCIO_FindInFiles.dsk
-[C:\DataControl\DATAFLEX\Sprints_DATAFLEX\AppSrc]
+Location=C:\Users\Manuel OCIO\Desktop\DataControl\DATAFLEX\Sprints_DATAFLEX\IdeSrc\Manuel OCIO_FindInFiles.dsk
+[C:\Users\Manuel OCIO\Desktop\DataControl\DATAFLEX\Sprints_DATAFLEX\AppSrc]
 IsEnabled=1
-[C:\DataControl\DATAFLEX\Sprints_DATAFLEX\DDSrc]
+[C:\Users\Manuel OCIO\Desktop\DataControl\DATAFLEX\Sprints_DATAFLEX\DDSrc]
 IsEnabled=1
-[C:\DataControl\DATAFLEX\Sprints_DATAFLEX\AppHtml]
+[C:\Users\Manuel OCIO\Desktop\DataControl\DATAFLEX\Sprints_DATAFLEX\AppHtml]
 IsEnabled=1
