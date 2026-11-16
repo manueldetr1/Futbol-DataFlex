@@ -18,24 +18,29 @@ Use SelectLiga.wo
 
 Object oDashboard is a cWebView
 
-    Set piMaxWidth to 1024
-    
+    Set piMaxWidth to 1140
     Set psCaption to "Dashboard"
     Set peViewType to vtUndefined
     Set pbShowCaption to False
     Set psCSSClass to "Dashboard"
     
     Object oWebMainPanel is a cWebPanel
-        Set piColumnCount to 24
+        Set piColumnCount to 12
         
-        // - - - - - - - - - - - - - - -
-        // Main Panel's Responsive Rules
-        // - - - - - - - - - - - - - - -
         WebSetResponsive piColumnCount rmMobile to 1
-        WebSetResponsive piColumnCount rmTabletPortrait to 16
+        WebSetResponsive piColumnCount rmTabletPortrait to 12
+        
+        // Banner de cabecera
+        Object oHeroBanner is a cWebHtmlBox
+            Set piColumnSpan to 12
+            Set pbShowBorder to False
+            Set psCSSClass to "HeroBanner"
+            Set psHtml to '<div class="hero-box"><div><h1>⚽ Gestión Deportiva</h1><p>Panel de administración de clubes, plantillas y competiciones</p></div><div class="hero-badge">Temporada 2026</div></div>'
+        End_Object
     
+        // Cuadrícula de tarjetas
         Object oTiles_grp is a cWebGroup
-            Set piColumnSpan to 8
+            Set piColumnSpan to 12
             Set pbShowBorder to False
             Set pbShowCaption to False
             Set piColumnCount to 12
@@ -43,9 +48,9 @@ Object oDashboard is a cWebView
     
             Object oTile1 is a cWebHtmlBox
                 Set pbServerOnClick to True
-                Set piColumnSpan to 6
-                Set psCSSClass to "Tile Light"
-                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Title">Entrenadores</div><div class="Tile_Subtitle"></div></div>'
+                Set piColumnSpan to 4
+                Set psCSSClass to "CustomTile tile-entrenadores"
+                Set psHtml to '<div class="tile-card" data-ServerOnClick="openview"><div class="tile-icon">📋</div><div class="tile-content"><h3>Entrenadores</h3><p>Cuerpo técnico y dirección</p></div></div>'
                 
                 Procedure OnClick String sId String sParam
                     Send Show of oSelectEntrenador
@@ -54,10 +59,10 @@ Object oDashboard is a cWebView
     
             Object oTile2 is a cWebHtmlBox
                 Set pbServerOnClick to True
-                Set piColumnSpan to 6
-                Set piColumnIndex to 6
-                Set psCSSClass to "Tile LightAlternate"
-                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Title">Jugadores</div><div class="Tile_Subtitle"></div></div>'
+                Set piColumnSpan to 4
+                Set piColumnIndex to 4
+                Set psCSSClass to "CustomTile tile-jugadores"
+                Set psHtml to '<div class="tile-card" data-ServerOnClick="openview"><div class="tile-icon">🏃</div><div class="tile-content"><h3>Jugadores</h3><p>Fichas, dorsales y plantillas</p></div></div>'
                 
                 Procedure OnClick String sId String sParam
                     Send Show of oSelectJugador
@@ -66,9 +71,10 @@ Object oDashboard is a cWebView
     
             Object oTile3 is a cWebHtmlBox
                 Set pbServerOnClick to True
-                Set piColumnSpan to 6
-                Set psCSSClass to "Tile Dark"
-                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Title">Posiciones</div><div class="Tile_Subtitle"></div></div>'
+                Set piColumnSpan to 4
+                Set piColumnIndex to 8
+                Set psCSSClass to "CustomTile tile-posiciones"
+                Set psHtml to '<div class="tile-card" data-ServerOnClick="openview"><div class="tile-icon">🎯</div><div class="tile-content"><h3>Posiciones</h3><p>Demarcaciones en el terreno</p></div></div>'
     
                 Procedure OnClick String sId String sParam
                     Send Show of oSelectPosicion
@@ -77,10 +83,10 @@ Object oDashboard is a cWebView
 
             Object oTile4 is a cWebHtmlBox
                 Set pbServerOnClick to True
-                Set piColumnSpan to 6
-                Set piColumnIndex to 6
-                Set psCSSClass to "Tile DarkAlternate"
-                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Title">Equipos</div><div class="Tile_Subtitle"></div></div>'
+                Set piColumnSpan to 4
+                Set piColumnIndex to 0
+                Set psCSSClass to "CustomTile tile-equipos"
+                Set psHtml to '<div class="tile-card" data-ServerOnClick="openview"><div class="tile-icon">🛡️</div><div class="tile-content"><h3>Equipos</h3><p>Clubes y escuadras registradas</p></div></div>'
                 
                 Procedure OnClick String sId String sParam
                     Send Show of oSelectEquipo
@@ -89,10 +95,10 @@ Object oDashboard is a cWebView
 
             Object oTile5 is a cWebHtmlBox
                 Set pbServerOnClick to True
-                Set piColumnSpan to 6
-                Set piColumnIndex to 0
-                Set psCSSClass to "Tile Light"
-                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Title">Ligas</div><div class="Tile_Subtitle"></div></div>'
+                Set piColumnSpan to 4
+                Set piColumnIndex to 4
+                Set psCSSClass to "CustomTile tile-ligas"
+                Set psHtml to '<div class="tile-card" data-ServerOnClick="openview"><div class="tile-icon">🏆</div><div class="tile-content"><h3>Ligas</h3><p>Torneos y competiciones</p></div></div>'
                 
                 Procedure OnClick String sId String sParam
                     Send Show of oSelectLiga
@@ -104,7 +110,6 @@ Object oDashboard is a cWebView
     End_Object
     
     Procedure OnBeforeShow
-        // Each time this view is shown we will update the appropriate information.
     End_Procedure
 
 End_Object

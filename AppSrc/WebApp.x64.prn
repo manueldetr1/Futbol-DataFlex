@@ -1,5 +1,5 @@
 Compiling Program: C:\Users\Manuel OCIO\Desktop\DataControl\DATAFLEX\Sprints_DATAFLEX\AppSrc\WebApp.src
-Memory Available: 22769463296
+Memory Available: 23313960960
 1>Use AllWebAppClasses.pkg
 Using pre-compiled package ALLWEBAPPCLASSES.PKG
 Including file: AllWebAppClasses.x64.pkd    (C:\Program Files\DataFlex 25.0\Pkg\AllWebAppClasses.x64.pkd)
@@ -3288,121 +3288,126 @@ Including file: ZoomLiga.wo    (C:\Users\Manuel OCIO\Desktop\DataControl\DATAFLE
 38909>>>
 38909>>>Object oDashboard is a cWebView
 38911>>>
-38911>>>    Set piMaxWidth to 1024
-38912>>>    
+38911>>>    Set piMaxWidth to 1140
 38912>>>    Set psCaption to "Dashboard"
 38913>>>    Set peViewType to vtUndefined
 38914>>>    Set pbShowCaption to False
 38915>>>    Set psCSSClass to "Dashboard"
 38916>>>    
 38916>>>    Object oWebMainPanel is a cWebPanel
-38918>>>        Set piColumnCount to 24
+38918>>>        Set piColumnCount to 12
 38919>>>        
-38919>>>        // - - - - - - - - - - - - - - -
-38919>>>        // Main Panel's Responsive Rules
-38919>>>        // - - - - - - - - - - - - - - -
 38919>>>        WebSetResponsive piColumnCount rmMobile to 1
-38920>>>        WebSetResponsive piColumnCount rmTabletPortrait to 16
-38921>>>    
-38921>>>        Object oTiles_grp is a cWebGroup
-38923>>>            Set piColumnSpan to 8
+38920>>>        WebSetResponsive piColumnCount rmTabletPortrait to 12
+38921>>>        
+38921>>>        // Banner de cabecera
+38921>>>        Object oHeroBanner is a cWebHtmlBox
+38923>>>            Set piColumnSpan to 12
 38924>>>            Set pbShowBorder to False
-38925>>>            Set pbShowCaption to False
-38926>>>            Set piColumnCount to 12
-38927>>>            Set psCSSClass to "TilesGroup"
+38925>>>            Set psCSSClass to "HeroBanner"
+38926>>>            Set psHtml to '<div class="hero-box"><div><h1>⚽ Gestión Deportiva</h1><p>Panel de administración de clubes, plantillas y competiciones</p></div><div class="hero-badge">Temporada 2026</div></div>'
+38927>>>        End_Object
 38928>>>    
-38928>>>            Object oTile1 is a cWebHtmlBox
-38930>>>                Set pbServerOnClick to True
-38931>>>                Set piColumnSpan to 6
-38932>>>                Set psCSSClass to "Tile Light"
-38933>>>                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Title">Entrenadores</div><div class="Tile_Subtitle"></div></div>'
-38934>>>                
-38934>>>                Procedure OnClick String sId String sParam
-38937>>>                    Send Show of oSelectEntrenador
-38938>>>                End_Procedure
-38939>>>            End_Object
-38940>>>    
-38940>>>            Object oTile2 is a cWebHtmlBox
-38942>>>                Set pbServerOnClick to True
-38943>>>                Set piColumnSpan to 6
-38944>>>                Set piColumnIndex to 6
-38945>>>                Set psCSSClass to "Tile LightAlternate"
-38946>>>                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Title">Jugadores</div><div class="Tile_Subtitle"></div></div>'
-38947>>>                
-38947>>>                Procedure OnClick String sId String sParam
-38950>>>                    Send Show of oSelectJugador
-38951>>>                End_Procedure
-38952>>>            End_Object
-38953>>>    
-38953>>>            Object oTile3 is a cWebHtmlBox
-38955>>>                Set pbServerOnClick to True
-38956>>>                Set piColumnSpan to 6
-38957>>>                Set psCSSClass to "Tile Dark"
-38958>>>                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Title">Posiciones</div><div class="Tile_Subtitle"></div></div>'
-38959>>>    
-38959>>>                Procedure OnClick String sId String sParam
-38962>>>                    Send Show of oSelectPosicion
-38963>>>                End_Procedure
-38964>>>            End_Object
-38965>>>
-38965>>>            Object oTile4 is a cWebHtmlBox
-38967>>>                Set pbServerOnClick to True
-38968>>>                Set piColumnSpan to 6
-38969>>>                Set piColumnIndex to 6
-38970>>>                Set psCSSClass to "Tile DarkAlternate"
-38971>>>                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Title">Equipos</div><div class="Tile_Subtitle"></div></div>'
-38972>>>                
-38972>>>                Procedure OnClick String sId String sParam
-38975>>>                    Send Show of oSelectEquipo
-38976>>>                End_Procedure
-38977>>>            End_Object
-38978>>>
-38978>>>            Object oTile5 is a cWebHtmlBox
-38980>>>                Set pbServerOnClick to True
-38981>>>                Set piColumnSpan to 6
-38982>>>                Set piColumnIndex to 0
-38983>>>                Set psCSSClass to "Tile Light"
-38984>>>                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Title">Ligas</div><div class="Tile_Subtitle"></div></div>'
-38985>>>                
-38985>>>                Procedure OnClick String sId String sParam
-38988>>>                    Send Show of oSelectLiga
-38989>>>                End_Procedure
-38990>>>            End_Object
-38991>>>            
-38991>>>        End_Object
-38992>>>    
-38992>>>    End_Object
-38993>>>    
-38993>>>    Procedure OnBeforeShow
-38996>>>        // Each time this view is shown we will update the appropriate information.
-38996>>>    End_Procedure
-38997>>>
-38997>>>End_Object
-38998>    Use ZoomEntrenador.wo
-38998>    Use SelectEntrenador.wo
-38998>    Use ZoomJugador.wo
-38998>    Use SelectJugador.wo
-38998>    Use ZoomPosicion.wo
-38998>    Use SelectPosicion.wo
-38998>    Use ZoomEquipo.wo
-38998>    Use SelectEquipo.wo
-38998>    Use ZoomLiga.wo
-38998>    Use SelectLiga.wo
-38998>    Set phoDefaultView to oDashboard
-38999>
-38999>End_Object
-39000>
-39000>Send StartWebApp of oWebApp
-39001>
+38928>>>        // Cuadrícula de tarjetas
+38928>>>        Object oTiles_grp is a cWebGroup
+38930>>>            Set piColumnSpan to 12
+38931>>>            Set pbShowBorder to False
+38932>>>            Set pbShowCaption to False
+38933>>>            Set piColumnCount to 12
+38934>>>            Set psCSSClass to "TilesGroup"
+38935>>>    
+38935>>>            Object oTile1 is a cWebHtmlBox
+38937>>>                Set pbServerOnClick to True
+38938>>>                Set piColumnSpan to 4
+38939>>>                Set psCSSClass to "CustomTile tile-entrenadores"
+38940>>>                Set psHtml to '<div class="tile-card" data-ServerOnClick="openview"><div class="tile-icon">📋</div><div class="tile-content"><h3>Entrenadores</h3><p>Cuerpo técnico y dirección</p></div></div>'
+38941>>>                
+38941>>>                Procedure OnClick String sId String sParam
+38944>>>                    Send Show of oSelectEntrenador
+38945>>>                End_Procedure
+38946>>>            End_Object
+38947>>>    
+38947>>>            Object oTile2 is a cWebHtmlBox
+38949>>>                Set pbServerOnClick to True
+38950>>>                Set piColumnSpan to 4
+38951>>>                Set piColumnIndex to 4
+38952>>>                Set psCSSClass to "CustomTile tile-jugadores"
+38953>>>                Set psHtml to '<div class="tile-card" data-ServerOnClick="openview"><div class="tile-icon">🏃</div><div class="tile-content"><h3>Jugadores</h3><p>Fichas, dorsales y plantillas</p></div></div>'
+38954>>>                
+38954>>>                Procedure OnClick String sId String sParam
+38957>>>                    Send Show of oSelectJugador
+38958>>>                End_Procedure
+38959>>>            End_Object
+38960>>>    
+38960>>>            Object oTile3 is a cWebHtmlBox
+38962>>>                Set pbServerOnClick to True
+38963>>>                Set piColumnSpan to 4
+38964>>>                Set piColumnIndex to 8
+38965>>>                Set psCSSClass to "CustomTile tile-posiciones"
+38966>>>                Set psHtml to '<div class="tile-card" data-ServerOnClick="openview"><div class="tile-icon">🎯</div><div class="tile-content"><h3>Posiciones</h3><p>Demarcaciones en el terreno</p></div></div>'
+38967>>>    
+38967>>>                Procedure OnClick String sId String sParam
+38970>>>                    Send Show of oSelectPosicion
+38971>>>                End_Procedure
+38972>>>            End_Object
+38973>>>
+38973>>>            Object oTile4 is a cWebHtmlBox
+38975>>>                Set pbServerOnClick to True
+38976>>>                Set piColumnSpan to 4
+38977>>>                Set piColumnIndex to 0
+38978>>>                Set psCSSClass to "CustomTile tile-equipos"
+38979>>>                Set psHtml to '<div class="tile-card" data-ServerOnClick="openview"><div class="tile-icon">🛡️</div><div class="tile-content"><h3>Equipos</h3><p>Clubes y escuadras registradas</p></div></div>'
+38980>>>                
+38980>>>                Procedure OnClick String sId String sParam
+38983>>>                    Send Show of oSelectEquipo
+38984>>>                End_Procedure
+38985>>>            End_Object
+38986>>>
+38986>>>            Object oTile5 is a cWebHtmlBox
+38988>>>                Set pbServerOnClick to True
+38989>>>                Set piColumnSpan to 4
+38990>>>                Set piColumnIndex to 4
+38991>>>                Set psCSSClass to "CustomTile tile-ligas"
+38992>>>                Set psHtml to '<div class="tile-card" data-ServerOnClick="openview"><div class="tile-icon">🏆</div><div class="tile-content"><h3>Ligas</h3><p>Torneos y competiciones</p></div></div>'
+38993>>>                
+38993>>>                Procedure OnClick String sId String sParam
+38996>>>                    Send Show of oSelectLiga
+38997>>>                End_Procedure
+38998>>>            End_Object
+38999>>>            
+38999>>>        End_Object
+39000>>>    
+39000>>>    End_Object
+39001>>>    
+39001>>>    Procedure OnBeforeShow
+39004>>>    End_Procedure
+39005>>>
+39005>>>End_Object
+39006>    Use ZoomEntrenador.wo
+39006>    Use SelectEntrenador.wo
+39006>    Use ZoomJugador.wo
+39006>    Use SelectJugador.wo
+39006>    Use ZoomPosicion.wo
+39006>    Use SelectPosicion.wo
+39006>    Use ZoomEquipo.wo
+39006>    Use SelectEquipo.wo
+39006>    Use ZoomLiga.wo
+39006>    Use SelectLiga.wo
+39006>    Set phoDefaultView to oDashboard
+39007>
+39007>End_Object
+39008>
+39008>Send StartWebApp of oWebApp
+39009>
 Summary
-Memory Available: 22758162432
+Memory Available: 23298969600
 Total Warnings : 0
 Total Errors   : 0
-Total Symbols  : 25598
+Total Symbols  : 25599
 Total Resources: 0
-Total Commands : 39000
+Total Commands : 39008
 Total Windows  : 0
 Total Pages    : 0
-Static Data    : 485055
-Message area   : 261596
-Total Blocks   : 17335
+Static Data    : 485565
+Message area   : 261705
+Total Blocks   : 17341

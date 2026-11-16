@@ -1,0 +1,150 @@
+/* =========================================================
+   ESTILOS PERSONALIZADOS - GESTIÓN DE FÚTBOL (DATAFLEX 25)
+   ========================================================= */
+
+/* 1. Fondo general y barra superior oscura a juego */
+.WebApp_View .WebCon_Content,
+.Dashboard .WebCon_Content {
+    background-color: #e2e8f0 !important;
+}
+
+.WebMenuBar,
+.WebApp_Header {
+    background-color: #0f172a !important;
+    border-bottom: 1px solid #1e293b !important;
+}
+
+/* Ocultar la segunda barra azul redundante debajo del menú */
+.WebApp_SubHeader,
+.WebView_CaptionBar {
+    display: none !important;
+}
+
+/* 2. Banner superior de bienvenida */
+.HeroBanner .hero-box {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #059669 100%);
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 32px 36px;
+    margin: 12px 0 20px 0;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.HeroBanner .hero-box h1 {
+    margin: 0 0 8px 0;
+    font-size: 1.85rem;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+}
+
+.HeroBanner .hero-box p {
+    margin: 0;
+    font-size: 1rem;
+    color: #cbd5e1;
+}
+
+.HeroBanner .hero-badge {
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(8px);
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* 3. Contenedor de tarjetas transparente */
+.TilesGroup,
+.TilesGroup .WebCon_Content,
+.TilesGroup .WebGrp_Body {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* 4. Tarjetas modernas (Tiles) del Dashboard */
+.CustomTile .tile-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 26px 22px;
+    margin: 6px 0;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.07);
+    border-left: 6px solid #2563eb;
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+    cursor: pointer;
+}
+
+.CustomTile .tile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 28px rgba(15, 23, 42, 0.14);
+}
+
+.CustomTile .tile-icon {
+    font-size: 2.1rem;
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: #eff6ff;
+    flex-shrink: 0;
+}
+
+.CustomTile .tile-content h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.CustomTile .tile-content p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: #64748b;
+}
+
+/* Colores distintivos por entidad */
+.tile-entrenadores .tile-card { border-left-color: #2563eb; }
+.tile-entrenadores .tile-icon { background: #eff6ff; }
+
+.tile-jugadores .tile-card { border-left-color: #10b981; }
+.tile-jugadores .tile-icon { background: #ecfdf5; }
+
+.tile-posiciones .tile-card { border-left-color: #f59e0b; }
+.tile-posiciones .tile-icon { background: #fffbeb; }
+
+.tile-equipos .tile-card { border-left-color: #6366f1; }
+.tile-equipos .tile-icon { background: #eef2ff; }
+
+.tile-ligas .tile-card { border-left-color: #ef4444; }
+.tile-ligas .tile-icon { background: #fef2f2; }
+
+/* 5. Mejora visual de Tablas (Vistas Select) y Formularios (Vistas Zoom) */
+.WebList {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.07);
+    background: #ffffff;
+}
+
+.WebList .WebListHead {
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+.WebList .WebListRow:hover {
+    background-color: #eff6ff !important;
+}
+
+.WebForm input,
+.WebCombo select {
+    border-radius: 8px !important;
+}
