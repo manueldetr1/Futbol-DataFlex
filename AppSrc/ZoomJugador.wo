@@ -7,6 +7,8 @@ Use cWebPanel.pkg
 Use cWebMenuGroup.pkg
 Use cWebMenuItem.pkg
 Use cWebForm.pkg
+Use cWebButton.pkg
+Use SelectPosicion.wo
 
 Use cligaDataDictionary.dd
 Use cequipoDataDictionary.dd
@@ -25,15 +27,15 @@ Object oZoomJugador is a cWebView
     End_Object 
 
     Object oequipo_DD is a cequipoDataDictionary
-        Set DDO_Server To oliga_DD
+        Set DDO_Server to oliga_DD
     End_Object 
 
     Object ojugador_DD is a cjugadorDataDictionary
-        Set DDO_Server To oequipo_DD
+        Set DDO_Server to oequipo_DD
     End_Object 
 
-    Set Main_DD To ojugador_DD
-    Set Server  To ojugador_DD
+    Set Main_DD to ojugador_DD
+    Set Server  to ojugador_DD
 
 
     Object oWebMainPanel is a cWebPanel
@@ -79,6 +81,19 @@ Object oZoomJugador is a cWebView
                 Send NavigatePath
             End_Procedure
         End_Object 
+
+        // Punto 4: Navegación Undefined (sin relación directa DD entre Jugador y Posición)
+        Object oVerPosicionesBtn is a cWebButton
+            Set piColumnSpan to 4
+            Set piColumnIndex to 0
+            Set psCaption to "Ver Posiciones"
+
+            WebRegisterPath ntNavigateForwardCustom oSelectPosicion
+
+            Procedure OnClick
+                Send NavigatePath
+            End_Procedure
+        End_Object
     End_Object 
 
     Object oActionGroup is a cWebMenuGroup
@@ -182,4 +197,4 @@ Object oZoomJugador is a cWebView
 
     End_Procedure
 
-End_Object 
+End_Object
