@@ -7,10 +7,12 @@ Use cWebPanel.pkg
 Use cWebMenuGroup.pkg
 Use cWebMenuItem.pkg
 Use cWebForm.pkg
-Use cWebButton.pkg
-Use SelectEquipo.wo
+Use cWebList.pkg
+Use cWebColumn.pkg
+Use ZoomEquipo.wo
 
 Use cligaDataDictionary.dd
+Use cequipoDataDictionary.dd
 
 Object oZoomLiga is a cWebView
     Set piColumnCount to 12
@@ -23,6 +25,11 @@ Object oZoomLiga is a cWebView
 
     Object oliga_DD is a cligaDataDictionary
     End_Object 
+
+    Object oequipo_DD is a cequipoDataDictionary
+        Set DDO_Server to oliga_DD
+        Set Constrain_File to liga.File_Number
+    End_Object
 
     Set Main_DD to oliga_DD
     Set Server  to oliga_DD
@@ -63,15 +70,23 @@ Object oZoomLiga is a cWebView
             Set psLabel to "EquiposMax"
         End_Object 
 
-        // 1º Botón para navegar a los equipos de esta liga (From parent)
-        Object oVerEquiposBtn is a cWebButton
-            Set piColumnSpan to 4
+        // 2º Lista embebida con los equipos de esta liga
+        Object oEquiposList is a cWebList
+            Set Server to oequipo_DD
+            Set piColumnSpan to 12
             Set piColumnIndex to 0
-            Set psCaption to "Ver Equipos de esta Liga"
+            Set piHeight to 250
+            Set pbAutoSearch to True
 
-            WebRegisterPath ntNavigateForward oSelectEquipo
+            WebRegisterPath ntNavigateForward oZoomEquipo
 
-            Procedure OnClick
+            Object oequipoNombreCol is a cWebColumn
+                Entry_Item equipo.Nombre
+                Set psCaption to "Equipos de esta Liga"
+                Set piWidth to 100
+            End_Object
+
+            Procedure OnRowClick String sRowId
                 Send NavigatePath
             End_Procedure
         End_Object
@@ -151,6 +166,7 @@ Object oZoomLiga is a cWebView
 
     Procedure OnNavigateForward tWebNavigateData NavigateData Integer hoInvokingView Integer hoInvokingObject
         Send SetActionButtons
+        Send FindFromTop of oEquiposList
     End_Procedure
 
 End_Object
